@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html ng-app='mainApp'>
+	<head>
+		<title>Welcome to AngularJS</title>
+		<script src='http://ajax.googleapis.com/ajax/libs/angularjs/1.0.3/angular.js'></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.4.0/jszip.min.js"></script>
+		<script src="lib/epub.js"></script>
+		<script>
+			var mainApp = angular.module("mainApp", []);
+			mainApp.controller('studentController', function($scope) {
+				$scope.student = {
+					firstName: "Mahesh",
+					lastName: "Parashar",
+
+					fullName: function() {
+						var studentObject;
+						studentObject = $scope.student;
+						return studentObject.firstName + " " + studentObject.lastName;
+					}
+				};
+			});
+			mainApp.controller('Clock',	function($scope) {
+				$scope.currentTime = new Date();
+			});
+			mainApp.controller('Mybook', function($scope) {
+				$scope.Book = ePub("./path/to/9897989798100_EPUB.epub");
+				// $scope.ABC = function() {
+				// 	alert('I am in ABC');
+					$scope.Book.renderTo('area');//div id
+				// }
+			});
+		</script>
+	</head>
+	<body>
+		<h2>AngularJS Sample Application</h2>
+		<div ng-controller="studentController">
+			Enter first name: <input type = "text" ng-model = "student.firstName"><br><br>
+			Enter last name: <input type = "text" ng-model = "student.lastName"><br>
+			<br>
+			
+			You are entering: {{student.fullName()}}
+		</div>
+		<h1>Hello, World.</h1>
+		<p ng-controller='Clock'>
+			The current time is {{currentTime | date:'h:mm:ss a'}}.
+		<p>
+		<div ng-controller="Mybook">
+			<div id="area"></div>
+			<!-- <button onclick="{{ABC()}}">Click me to see the book</button> -->
+			<button onclick="{{Book.prevPage()}}">Prev</button>
+			<button onclick="{{Book.nextPage()}}">Next</button>
+		</div>
+	</body>
+</html>
