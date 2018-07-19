@@ -3,7 +3,7 @@
 	<head>
 		<title>Welcome to AngularJS</title>
 		<script src='http://ajax.googleapis.com/ajax/libs/angularjs/1.0.3/angular.js'></script>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.4.0/jszip.min.js"></script>
+		<script src="lib/jszip.min.js"></script>
 		<script src="lib/epub.js"></script>
 		<script>
 			var mainApp = angular.module("mainApp", []);
@@ -23,12 +23,17 @@
 			// 	$scope.currentTime = new Date();
 			// });
 			mainApp.controller('Mybook', function($scope) {
-				Book = ePub("./path/to/9897989798100_EPUB.epub");
-				Book.renderTo('area', {width: 1024, height: 920});
+				//Book = ePub("./path/to/9897989798100_EPUB.epub");
+				Book = ePub("./path/to/9897989798146_EPUB.epub");
+				Book.renderTo("area", {flow: "auto", width: 1024, height: 700});
+				//Book.renderTo('area', {width: 1024, height: 920});
+				// var rendition = Book.renderTo("area");
+  				// rendition.display();
 			});
 		</script>
+	   	<link href="lib/bootstrap.css" rel="stylesheet" />
 	</head>
-	<body ng-controller="Mybook" id="area">
+	<body ng-controller="Mybook">
 		<!-- <h2>AngularJS Sample Application</h2>
 		<div ng-controller="studentController">
 			Enter first name: <input type = "text" ng-model = "student.firstName"><br><br>
@@ -41,6 +46,20 @@
 		<p ng-controller='Clock'>
 			The current time is {{currentTime | date:'h:mm:ss a'}}.
 		<p> -->
+<div class="container">
+<h1>Hello World!</h1>
+<div class="row">
+	<div class="col-sm-6" style="background-color:yellow;">
+	<p>Lorem ipsum...</p>
+	</div>
+	<div class="col-sm-6" style="background-color:pink;">
+	<p>Sed ut perspiciatis...</p>
+	</div>
+</div>
+<div class="row">
+		<div class="col-sm-12" id="area">Here I will show my values</div>
+	</div>
+</div>
 		<button onclick="Book.prevPage()">Prev</button>
 		<button onclick="Book.nextPage()">Next</button>
 		<!-- <div id="area"></div> -->
