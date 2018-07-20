@@ -7,61 +7,28 @@
 		<script src="lib/epub.js"></script>
 		<script>
 			var mainApp = angular.module("mainApp", []);
-			// mainApp.controller('studentController', function($scope) {
-			// 	$scope.student = {
-			// 		firstName: "Mahesh",
-			// 		lastName: "Parashar",
-
-			// 		fullName: function() {
-			// 			var studentObject;
-			// 			studentObject = $scope.student;
-			// 			return studentObject.firstName + " " + studentObject.lastName;
-			// 		}
-			// 	};
-			// });
-			// mainApp.controller('Clock',	function($scope) {
-			// 	$scope.currentTime = new Date();
-			// });
 			mainApp.controller('Mybook', function($scope) {
 				//Book = ePub("./path/to/9897989798100_EPUB.epub");
 				Book = ePub("./path/to/9897989798146_EPUB.epub");
-				Book.renderTo("area", {flow: "auto", width: 1024, height: 700});
-				//Book.renderTo('area', {width: 1024, height: 920});
-				// var rendition = Book.renderTo("area");
-  				// rendition.display();
+				//Book = ePub("./path/to/9897989798137_EPUB.epub");
+				Book.renderTo("area", {flow: "auto", width: 1024, height: 1024});
 			});
 		</script>
-	   	<link href="lib/bootstrap.css" rel="stylesheet" />
+		   <link href="lib/bootstrap.css" rel="stylesheet" />
+		   <link href="lib/basic.css" rel="stylesheet"/>
 	</head>
 	<body ng-controller="Mybook">
-		<!-- <h2>AngularJS Sample Application</h2>
-		<div ng-controller="studentController">
-			Enter first name: <input type = "text" ng-model = "student.firstName"><br><br>
-			Enter last name: <input type = "text" ng-model = "student.lastName"><br>
-			<br>
-			
-			You are entering: {{student.fullName()}}
+	<div class="container">
+		<h1 style="align-self: center;">Epub.js Demo!</h1>
+		<div class="row">
+			<div class="col-sm-2" style="padding-top: 300px;">
+				<button onclick="Book.prevPage()">Prev</button>
+			</div>
+			<div class="col-sm-8" id="area"></div>
+			<div class="col-sm-2" style="padding-top: 300px;">
+				<button onclick="Book.nextPage()">Next</button>
+			</div>
 		</div>
-		<h1>Hello, World.</h1>
-		<p ng-controller='Clock'>
-			The current time is {{currentTime | date:'h:mm:ss a'}}.
-		<p> -->
-<div class="container">
-<h1>Hello World!</h1>
-<div class="row">
-	<div class="col-sm-6" style="background-color:yellow;">
-	<p>Lorem ipsum...</p>
 	</div>
-	<div class="col-sm-6" style="background-color:pink;">
-	<p>Sed ut perspiciatis...</p>
-	</div>
-</div>
-<div class="row">
-		<div class="col-sm-12" id="area">Here I will show my values</div>
-	</div>
-</div>
-		<button onclick="Book.prevPage()">Prev</button>
-		<button onclick="Book.nextPage()">Next</button>
-		<!-- <div id="area"></div> -->
 	</body>
 </html>
