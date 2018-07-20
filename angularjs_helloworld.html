@@ -17,18 +17,46 @@
 		   <link href="lib/bootstrap.css" rel="stylesheet" />
 		   <link href="lib/basic.css" rel="stylesheet"/>
 	</head>
-	<body ng-controller="Mybook">
-	<div class="container">
-		<h1 style="align-self: center;">Epub.js Demo!</h1>
-		<div class="row">
-			<div class="col-sm-2" style="padding-top: 300px;">
-				<button onclick="Book.prevPage()">Prev</button>
-			</div>
-			<div class="col-sm-8" id="area"></div>
-			<div class="col-sm-2" style="padding-top: 300px;">
-				<button onclick="Book.nextPage()">Next</button>
+	<body>
+		<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+			<div class="container">
+				<div class="navbar-header">
+					<!-- content -->
+					<h3 style="color: white; margin-left: 330px;">Epub.js Demo!</h3>
+				</div>
 			</div>
 		</div>
-	</div>
+		<div class="jumbotron">
+			<div class="container">
+				<!-- content -->
+				<br>
+			</div>
+		</div>			  
+		<div id="root" class="container" ng-controller="Mybook">
+			<div id="main" class="row">
+				<section id="content">
+				<!-- content -->
+				<div class="col-sm-2" style="padding-top: 300px;">
+						<button onclick="Book.prevPage()">Prev</button>
+					</div>
+					<div class="col-sm-8" id="area"></div>
+					<div class="col-sm-2" style="padding-top: 300px;">
+						<button onclick="Book.nextPage()">Next</button>
+					</div>
+				</section>
+			</div>
+			<footer>
+				<div class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
+				<div class="container">
+					<div class="navbar-header">
+						<!-- content -->
+						dfndslk;ddsgds
+						gdsgdsgdsgdsgds
+						gdsgsdgsdgsdgsdg
+					</div>
+				</div>
+				</div>
+			</footer>
+		</div>
 	</body>
 </html>
