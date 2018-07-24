@@ -11,48 +11,37 @@
 				//Book = ePub("./path/to/9897989798100_EPUB.epub");
 				Book = ePub("./path/to/9897989798146_EPUB.epub");
 				//Book = ePub("./path/to/9897989798137_EPUB.epub");
-				Book.renderTo("area", {flow: "auto", width: 1024, height: 1024});
+				Book.renderTo("area", {flow: "auto"});
 			});
 		</script>
 		   <link href="lib/bootstrap.css" rel="stylesheet" />
 		   <link href="lib/basic.css" rel="stylesheet"/>
 	</head>
-	<body>
+	<body ng-controller="Mybook">
 		<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 			<div class="container">
 				<div class="navbar-header">
-					<!-- content -->
-					<h3 style="color: white; margin-left: 330px;">Epub.js Demo!</h3>
+					<button onclick="Book.prevPage()">Prev</button>
 				</div>
 			</div>
 		</div>
-		<div class="jumbotron">
+		<!-- <div class="jumbotron">
 			<div class="container">
-				<!-- content -->
-				<br>
 			</div>
-		</div>			  
-		<div id="root" class="container" ng-controller="Mybook">
+		</div>			   -->
+		<div id="root" class="container">
 			<div id="main" class="row">
 				<section id="content">
 				<!-- content -->
-				<div class="col-sm-2" style="padding-top: 300px;">
-						<button onclick="Book.prevPage()">Prev</button>
-					</div>
-					<div class="col-sm-8" id="area"></div>
-					<div class="col-sm-2" style="padding-top: 300px;">
-						<button onclick="Book.nextPage()">Next</button>
-					</div>
+				<br>
+					<div id="area"></div>
 				</section>
 			</div>
 			<footer>
 				<div class="navbar navbar-inverse navbar-fixed-bottom" role="navigation">
 				<div class="container">
-					<div class="navbar-header">
-						<!-- content -->
-						dfndslk;ddsgds
-						gdsgdsgdsgdsgds
-						gdsgsdgsdgsdgsdg
+					<div class="navbar-footer">
+						<button onclick="Book.nextPage()">Next</button>
 					</div>
 				</div>
 				</div>

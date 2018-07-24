@@ -1,11 +1,32 @@
 body {
   overflow: auto;
-  background: #eee;
+  background: #fff;
+  position: relative;
 }
-
+html, body{
+  min-height: 100%;
+}
+.overlayn{
+  position: absolute;
+  top: 50%;
+  left: 94%;
+  width: 4%;
+  height: 3%;
+  z-index: 10;
+  /* background-color: rgba(0,0,0,0.5); dim the background */
+}
+.overlayp{
+  position: absolute;
+  top: 50%;
+  left: 6%;
+  width: 4%;
+  height: 3%;
+  z-index: 10;
+  /* background-color: rgba(0,0,0,0.5); dim the background */
+}
 #wrapper {
-  width: 480px;
-  height: 640px;
+  width: 1440px;
+  height: 960px;
   overflow: hidden;
   border: 1px solid #ccc;
   margin: 20px auto;
@@ -14,8 +35,8 @@ body {
 }
 
 #area {
-  width: 480px;
-  height: 650px;
+  width: 1440px;
+  height: 960px;
   margin: -5px auto;
   -moz-box-shadow:      inset 10px 0 20px rgba(0,0,0,.1);
   -webkit-box-shadow:   inset 10px 0 20px rgba(0,0,0,.1);

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app='mainApp'>
+	<head>
+		<title>Welcome to AngularJS</title>
+		<script src='http://ajax.googleapis.com/ajax/libs/angularjs/1.0.3/angular.js'></script>
+		<script src="lib/jszip.min.js"></script>
+		<script src="lib/epub.js"></script>
+		<script>
+			var mainApp = angular.module("mainApp", []);
+			mainApp.controller('Mybook', function($scope) {
+				Book = ePub("./path/to/9897989798146_EPUB.epub");
+				Book.renderTo("area", {flow: "auto"});
+			});
+		</script>
+		   <link href="lib/bootstrap.css" rel="stylesheet" />
+		   <link href="lib/basic.css" rel="stylesheet"/>
+	</head>
+	<body ng-controller="Mybook">
+		<div class="row">
+				<button class="overlayp" onclick="Book.prevPage()">Prev</button>
+			<div id="area"></div>
+				<button class="overlayn" onclick="Book.nextPage()">Next</button>
+		</div>
+	</body>
+</html>
