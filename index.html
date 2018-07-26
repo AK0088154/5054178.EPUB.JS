@@ -9,6 +9,7 @@
 			var mainApp = angular.module("mainApp", []);
 			mainApp.controller('Mybook', function($scope) {
 				Book = ePub("./path/to/9897989798146_EPUB.epub");
+				// Book = ePub("./path/to/9781319192231.epub");
 				Book.renderTo("area", {flow: "auto"});
 			});
 		</script>
